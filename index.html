@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Controllable Text-to-Speech Generation</title>
+  <title>Eliciting Implicit Acoustic Styles from Open-domain Instructions to Facilitate Fine-grained Controllable Generation of Speech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
@@ -164,7 +164,7 @@
     <!-- 摘要 -->
     <h2 id="abstract">Abstract</h2>
     <p style="font-size: 1.05rem;">
-      This paper aims to control text-to-speech TTS task based on open-domain instructions. Traditional work mainly focuses on the accuracy of the speech content. A few work controls the acoustic aspects in TTS by predefined templates or parameters whose usage needs professional training. Besides, the control types and formats are fixed, making it hard to meet diverse users' needs. To control TTS, one solution is to use open-domain instructions in free text like ``Generate the voice of a woman who is heartbroken due to a breakup.'' That can be easily used without extra training, but the instructions may be rather abstract and vague. To address this problem, we propose a new controllable model. It first utilizes multimodal LLMs with knowledge-augmented techniques to infer the desired voice style from the open-domain instructions. The powerful language understanding ability of LLMs can better decipher the abstract and vague semantics in the input. By using these style factors as a control condition, we design a diffusion-based generator adept at finely adjusting speech details. That offers higher flexibility to meet complex user needs. Next, we verify the output speech from three aspects, i.e., consistency of decoding state, mel-spectrogram, and instruction style. This verified feedback can inversely optimize the generator. Extensive experiments are conducted on three popular datasets. The results show the effectiveness of our approach.
+      This paper focuses on generating speech with the acoustic style that meets users' needs based on their open-domain instructions. To control the style, early work mostly relies on pre-defined rules or templates. The control types and formats are fixed in a closed domain, making it hard to meet diverse needs of users. One solution is to resort to instructions in free text to guide the generation. Current work mainly studies the instructions that clearly specify the acoustic styles, such as low pitch and fast speed. However, the instructions are complex, some even vague and abstract, such as ``Generate a voice of a woman who is heartbroken due to a breakup.'' It is hard to infer this implicit style by traditional matching-based methods. To address this problem, we propose a new controllable model. It first utilizes multimodal LLMs with knowledge-augmented techniques to infer the desired speech style from the instructions. The powerful language understanding ability of LLMs can help us better elicit the implicit style factors from the instruction. By using these factors as a control condition, we design a diffusion-based generator adept at finely adjusting speech details. That offers higher flexibility to meet complex users' needs. Next, we verify the output speech from three aspects, i.e., consistency of decoding state, mel-spectrogram, and instruction style. This verified feedback can inversely optimize the generator. Extensive experiments are conducted on three popular datasets. The results show the effectiveness and good controllability of our approach. 
     </p>
   
     <!-- 目录 -->
@@ -178,7 +178,8 @@
   
     <!-- 模型概览 -->
     <h2 id="model-overview">Method</h2>
-    <p>
+    <p>Close
+      <!-- 简要描述模型 -->
       Our method leverages multimodal LLMs to infer style factors from instructions, and a diffusion-based generator to synthesize expressive speech.
     </p>
     <img src="method.png" alt="Method Diagram" style="max-width: 100%; margin-top: 1rem;">
